@@ -1,0 +1,19 @@
+
+\subsection{Motivation}
+Games have frequently been used to test the limits of artificial intelligence. Some examples include chess and checkers (games of perfect information) and rock-paper-scissors and poker (games of incomplete information)-r) which are, in theory, solvable. Often, however, calculating the optimal strategy for a game can be too complex, too computationally expensive. In such cases, approximating the optimal strategy is the only real alternative.
+
+In this paper, I investigate approximating the optimal strategy in a two-player game of incomplete information with application to Yu-Gi-Oh, which is a zero-sum card game in which the players each build a deck from a large card pool (over nine thousand unique cards), this leads to a diverse set of strategies and player interactions. Because the state space would normally be too large, by using approximate dynamic programming a near-optimal strategy can be estimated in a restricted setting.
+
+
+\subsection{Previous Literature}
+Previous research has focused on poker, specifically two-player Texas Hold'em and Black Jack. Two-player variants are more frequently studied because as more players enter the game the state space starts to rapidly increase. By tracking the current state of a game it is possible to estimate the possible outcomes from that state. For example, in Black Jack tracking the ratio of face-cards and tens left in a standard poker deck after each hand. A current state, the aforementioned ratio, can serve to approximate a player's odds of beating the dealer with a higher ratio (more face-cards and tens compared to the rest of the deck) favoring the player \citep{Thorp:2017}.
+
+The state space is all possible actions or outcomes a given moment can have, imagine a chess game and having to list every possible move for every different scenario. This can quickly become too large to handle with a computer and approximation becomes the only option. Strategies are, as described in game theory, as what actions a player will take in any given setting in the state space. In this paper, the players' strategies have been limited to choosing when to attack given different circumstances. Would a player attack when the opponent might have a trap waiting? Would he be willing to risk sacrificing a card to take an opponents card with it? A strategy is optimal when deviating from it leads to a less favorable outcome and if the strategies of the players settle then they are at equilibrium.
+
+To limit the state space, abstraction techniques---removing or limiting factors in the game that do not change the overall structure---can be used. One example is shrinking deck size and another is bucketing. Bucketing groups every possible hand into bins based on strategic similarity, limiting the state space and allows for a ranking of these groupings \citep{Billings:2003}. However, using bucketing will lead to pseudo-optimal strategies since it lowers the accuracy of the model.
+
+Some of the most important factors to consider are hand strength/potential, bluffing, and unpredictability. By simulating a sample of possible plays given a player's hand the expected payoff from different actions can be estimated \citep{Billings:1999}. In two-player card games finding the best strategy can often be impossible, but finding the worst strategy is much easier. For a given player's possible strategies, it is possible to see which one will make them loose the fastest. This worst strategy can act as a bench mark to evaluate other strategies \citep{Gilpin:2006}. Although in Yu-Gi-Oh the worst strategy is arguably doing nothing in every state, so perhaps using random play as a benchmark is better.
+
+
+
+
