@@ -1,0 +1,31 @@
+
+\subsection{Adjustment Model}
+At first, the adjustment function would reevaluate itself in every new state the player encountered, every turn the state space would be updated and new coefficients would be estimated to solve for new weights. This, however, turned out to be too computationally expensive and thus, to minimize complexity, a separate set of simulated games were used to approximate a model that utilizes a few initial state variables to estimate the coefficients. 
+
+The estimated model $Pr(Y=1 | X = x) = \log \frac{p}{1-p} = \beta_0 + \beta_1 x_1 + ... + \beta_K x_K, \quad k = 1,...,K$, see table 1 for results, used FirstA---a binary variable for player A going first; HAMon, HASpell, HATrap---the number of monsters, spells, and traps in the players hand receptively; and PrAW---the weights for the decision player A has to make. 
+
+The decision points are when a player wants to attack with his monsters in different scenarios and the weights are the probability that he takes that action. PrAwMST is attacking when the opponent has monster and spells or traps; PrAwM is attacking when the opponent has only monsters; and PrAwST is attacking when the opponent only has spells or traps. The coefficients on the weights decrease as the risk of loosing a monster increases; the decision with the greatest risk is PrAMST followed by PrAwM and PrAST. A player can lose a monster from an opposing monster and a potential trap at PrAMST, so PrAST is the safest since spells cannot hurt monsters.
+
+Interestingly, players were better off when they drew more spells and traps rather than monsters. Originally, I assumed monsters would be the most important card, given that they are the only way to win the game outside of decking the opponent out (runs out of cards to draw thus losing). After seeing the regression and reconsidering the rules of the game, I speculate this occurred due to monsters only being allowed to be summoned once per turn. Similar to pouring too much water into a funnel, at some point it will overflow if you pour more than the funnel can let out. A player can safely win a game with only one monster provided his opponent is more aggressive---attacking into traps. 
+
+{\footnotesize
+\input{../Output/bm_summary_table}
+}
+
+\FloatBarrier
+\subsection{Strategy Evaluation}
+In this model after simulating each game, the strategy player A employed would be recorded as a binary variable: AsHalf---random play, player A effectively flipped a coin to decide his actions; AsAlways---always take an action if possible; and AsADP---the weights were estimated from the coefficients from table 1 and cards in their hand. Player B's strategy is randomly assigned between random play and always play in order to represent player A's lack of knowledge of player B's strategy. The strategies can be thought of as how aggressive the player wants to be, always attacking as opposed to the more passive attacking half of the time. The AsADP was somewhat of a middle ground between the two, since it changed based on the player's hand.
+
+Initial inspection confirmed that going first is advantageous since it is always the largest positive coefficient. This showed in the simulations as well, the player going first usually won two-thirds of the time. An unusual result was that the random play strategy did so well in comparison to the others. Saving the monsters to keep as a wall while passively applying pressure is about as good as a player a do unless he can tell when the opponent is bluffing (setting a spell but behaving like it is a trap). I had wanted to further study more passive strategies, however, this leads to long games that end in decking out and increasing the simulation time. Regardless a passive strategy would force the first turn player to act more aggressively, since if the players have the same deck size, then the player going first will run out of cards first.
+
+As with matching-pennies, if both players are employing the same strategy, optimal or otherwise, with the same deck then each player should expect to win approximately half of the games played. 
+
+
+{\footnotesize
+\input{../Output/bm_summary_table2}
+}
+
+
+
+
+
