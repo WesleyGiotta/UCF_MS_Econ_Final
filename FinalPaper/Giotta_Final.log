@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  31 JUL 2020 08:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  18 AUG 2020 14:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -568,9 +568,9 @@ LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 87.
 
 [28] (../Game/rules_hand_field.py [29] [30] [31]) (../Game/mechanics_cs.py
-[32] [33] [34] [35] [36] [37] [38]) (../Game/turns_4.py [39] [40] [41] [42]
-[43] [44]) (../Game/max_weightFunc_2.py [45]) (../Game/currnent_state.py
-[46] [47] [48] [49] [50] [51] [52]) [53]
+[32] [33] [34] [35] [36] [37] [38]) (../Game/gameplay_turns.py [39] [40]
+[41] [42] [43] [44]) (../Game/max_weightFunc_2.py [45])
+(../Game/currnent_state.py [46] [47] [48] [49] [50] [51] [52]) [53]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 124.
@@ -602,7 +602,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1--134
 ) [54] [55] (./Giotta_Final.bbl) [56] (./Giotta_Final.aux) ) 
 Here is how much of TeX's memory you used:
  16516 strings out of 492616
- 289003 string characters out of 6129482
+ 289024 string characters out of 6129482
  685763 words of memory out of 5000000
  20257 multiletter control sequences out of 15000+600000
  539662 words of font info for 52 fonts, out of 8000000 for 9000
@@ -619,7 +619,7 @@ xmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2019/texmf
 dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2019/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2019/texmf-dis
 t/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Giotta_Final.pdf (57 pages, 240708 bytes).
+Output written on Giotta_Final.pdf (57 pages, 240719 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  159 compressed objects within 2 object streams
